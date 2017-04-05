@@ -4,7 +4,7 @@ Description omitted on purpose.
 
 ## Install
 ```bash
-git clone 
+git clone git@github.com:18thletter/matrix-path.git
 npm install
 ```
 
