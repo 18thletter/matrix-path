@@ -1,7 +1,7 @@
-const mw = require('./matrix-weight');
+const mw = require('./lib/matrix-weight');
 const test = require('tape');
 const request = require('supertest');
-const server = require('./app');
+const server = require('./lib/app');
 
 const matrix = [
   [8,9,7,6,7],
