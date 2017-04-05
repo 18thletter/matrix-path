@@ -10,7 +10,7 @@ const matrix = [
 ];
 
 test('we can build a pre-computed matrix of weights', (t) => {
-  weights = mw.buildWeightMatrix(matrix);
+  const weights = mw.buildWeightMatrix(matrix);
   t.deepEqual(weights, [
     [8,9,7,6,7],
     [8,13,7,9,11],
@@ -18,5 +18,14 @@ test('we can build a pre-computed matrix of weights', (t) => {
     [15,16,10,10,13],
     [15,10,11,11,19]
   ]);
+
   t.end();
-})
+});
+
+test('we can get the path from a matrix and its computed weights', (t) => {
+  const weights = mw.buildWeightMatrix(matrix);
+  const path = mw.findPath(matrix, weights);
+  t.deepEqual(path, [6,1,2,1,0]);
+
+  t.end();
+});
