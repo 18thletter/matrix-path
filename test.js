@@ -1,5 +1,7 @@
 const mw = require('./matrix-weight');
 const test = require('tape');
+const request = require('supertest');
+const app = require('./server');
 
 const matrix = [
   [8,9,7,6,7],
@@ -32,6 +34,18 @@ test('we can get the path from a matrix and its computed weights', (t) => {
 test('we can calculate the total weight from a path', (t) => {
   const weight = mw.getPathWeight([16,2,0,12,6,8]);
   t.equal(weight, 44);
+
+  t.end();
+});
+
+test('we can get the minimum path and weight from an API endpoint', (t) => {
+  request(app).post('/')
+    .send(matrix)
+    .expect('Content-Type', /json/)
+    .expect(200, {
+      path: [6,1,2,1,0],
+      weight: 10
+    });
 
   t.end();
 });
