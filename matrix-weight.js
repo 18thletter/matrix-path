@@ -131,5 +131,15 @@ function findPositionOfSmallest(arr) {
   return minPosition;
 }
 
+/**
+ * Get the weight of a path (add up all the values in it).
+ * 
+ * @param {Array} path an array of integers
+ */
+function getPathWeight(path) {
+  return path.reduce((accumulator, val) => accumulator + val, 0);
+}
+
 exports.buildWeightMatrix = buildWeightMatrix;
 exports.findPath = findPath;
+exports.getPathWeight = getPathWeight;
