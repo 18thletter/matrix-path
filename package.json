@@ -4,7 +4,8 @@
     "tape": "^4.6.3"
   },
   "scripts": {
-    "test": "node test.js"
+    "test": "node test.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "body-parser": "^1.17.1",
