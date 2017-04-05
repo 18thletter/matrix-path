@@ -28,3 +28,10 @@ test('we can get the path from a matrix and its computed weights', (t) => {
 
   t.end();
 });
+
+test('we can calculate the total weight from a path', (t) => {
+  const weight = mw.getWeight([16,2,0,12,6,8]);
+  t.equal(weight, 44);
+
+  t.end();
+});
